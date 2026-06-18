@@ -1,0 +1,6 @@
+{
+  "bunVersion": "1.x",
+  "buildCommand": "bun run build:css",
+  "outputDirectory": "public",
+  "installCommand": "bun install"
+}

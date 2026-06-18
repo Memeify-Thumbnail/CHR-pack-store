@@ -163,14 +163,13 @@ const app = new Elysia()
   })
 
   // Static files
-  .get("/icon*", ({ params }) => {
-    // matches /icon.png, /icon-mrbeast.png, etc.
-    const name = params["*"] as string;
+  .get("/icon*", ({ params }: any) => {
+    const name = params["*"] as string | undefined;
     if (!name) return;
     return serveStatic(`icon${name}`);
   })
-  .get("/styles/*", ({ params }) => {
-    const name = params["*"] as string;
+  .get("/styles/*", ({ params }: any) => {
+    const name = params["*"] as string | undefined;
     if (!name) return;
     return serveStatic(`styles/${name}`);
   });
