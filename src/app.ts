@@ -12,10 +12,15 @@ import { homePage } from "./pages/home";
 import { join, extname } from "path";
 import { readFileSync, existsSync } from "fs";
 
-// ─── Bootstrap ───
+// ─── Bootstrap (lazy: enrichPacks only starts on first request) ───
 const packs = loadManifests();
-enrichPacks(packs);
-setInterval(() => enrichPacks(packs), 10 * 60 * 1000);
+let enriched = false;
+function ensureEnriched() {
+  if (enriched) return;
+  enriched = true;
+  enrichPacks(packs);
+  setInterval(() => enrichPacks(packs), 10 * 60 * 1000);
+}
 
 // ─── MIME map for static files ───
 const MIME: Record<string, string> = {
@@ -65,6 +70,7 @@ const app = new Elysia()
 
   // Home page
   .get("/", ({ request }) => {
+    ensureEnriched();
     const url = new URL(request.url);
     const queryLang = url.searchParams.get("lang");
     const locale = queryLang === "zh" || queryLang === "en"
@@ -75,6 +81,7 @@ const app = new Elysia()
 
   // API
   .get("/api/health", () => {
+    ensureEnriched();
     return new Response(
       JSON.stringify({
         status: "ok",
