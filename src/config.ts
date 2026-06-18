@@ -7,6 +7,7 @@ export const site = {
   title: "CHR-pack Store For Memeify Thumbnail",
   description:
     "Character packs for Memeify Thumbnail — make your thumbnails pop!",
+  url: "https://chr-pack-store.vercel.app",
   defaultTheme: "dark" as "dark" | "light" | "auto",
   accentHue: 48, // Yellow-ish accent
 };
