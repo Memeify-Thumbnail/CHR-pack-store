@@ -1,5 +1,10 @@
 {
   "bunVersion": "1.x",
   "buildCommand": "bun run build:css",
-  "installCommand": "bun install"
+  "installCommand": "bun install",
+  "functions": {
+    "src/app.ts": {
+      "maxDuration": 30
+    }
+  }
 }
