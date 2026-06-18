@@ -33,7 +33,7 @@ interface GitHubRelease {
   html_url?: string;
 }
 
-const MANIFESTS_DIR = join(import.meta.dirname, "..", "manifests");
+const MANIFESTS_DIR = join(process.cwd(), "manifests");
 
 // ─── In-memory version cache (Map<packId, { version, update_url }>) ───
 const versionCache = new Map<string, { version: string; update_url?: string }>();
