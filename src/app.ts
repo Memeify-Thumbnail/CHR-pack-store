@@ -10,6 +10,7 @@ import { detectLocale } from "./i18n";
 import { base } from "./components/layout";
 import { homePage } from "./pages/home";
 import { join, extname } from "path";
+import { readFileSync, existsSync } from "fs";
 
 // ─── Bootstrap ───
 const packs = loadManifests();
@@ -44,9 +45,9 @@ function serveStatic(filePath: string): Response | undefined {
   if (!mime) return;
 
   try {
-    const file = Bun.file(fullPath);
-    if (!file.size) return;
-    return new Response(file, {
+    if (!existsSync(fullPath)) return;
+    const buffer = readFileSync(fullPath);
+    return new Response(buffer, {
       headers: {
         "Content-Type": mime,
         "Cache-Control": "public, max-age=86400",
