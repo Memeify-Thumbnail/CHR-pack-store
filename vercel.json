@@ -3,7 +3,7 @@
   "buildCommand": "bun run build:css",
   "installCommand": "bun install",
   "functions": {
-    "src/app.ts": {
+    "api/**/*.ts": {
       "maxDuration": 30
     }
   }
