@@ -1,0 +1,13 @@
+{
+  "character_name": "MrBeast(example)",
+  "description": "MrBeast (Jimmy Donaldson) — the world's top YouTube creator, famous for extreme challenges, massive cash prizes, and philanthropic stunts. This character pack brings his iconic expressions and poses into your YouTube thumbnails, making every browse full of surprises and click-worthy moments.",
+  "icon": "https://raw.githubusercontent.com/Memeify-Thumbnail/CHR-pack-example/refs/heads/main/icon.png",
+  "author": "Memeify-Thumbnail",
+  "version_check_url": "https://api.github.com/repos/Memeify-Thumbnail/CHR-pack-example/releases/latest",
+  "update_url": "https://github.com/Memeify-Thumbnail/CHR-pack-example/archive/refs/tags/1.0.0.zip",
+  "localizations": {
+    "zh": {
+      "description": "MrBeast（Jimmy Donaldson）——全球头部YouTube创作者，以夸张的挑战、巨额奖金和慈善壮举闻名。本角色包将他标志性的表情与姿态植入YouTube缩略图，让你的每一次浏览都充满惊喜与点击欲。"
+    }
+  }
+}
